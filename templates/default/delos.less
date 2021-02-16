@@ -311,6 +311,7 @@ span.ilAlert {
 .dropdown-header {
 	padding: 3px 10px;
 	background-color: @dropdown-header-bg;
+	border-bottom: @dropdown-header-border;
 }
 .dropdown-menu {
 	background-color: @dropdown-bg;
@@ -448,7 +449,7 @@ div.ilFrame {
 	margin-left: 15px;
 	overflow: auto;
 	background-color: @il-secondary-container-bg;
-	border-right: 3px solid lighten(@mid-gray, 33%);
+	border-right: 3px solid @gray-light;
 	z-index: 100;
 	position: fixed;
 	top: @il-header-height;
@@ -463,7 +464,7 @@ div.ilFrame {
 	margin-right: 15px;
 	border-right: none;
 	//See 20986 with according JF decision
-	border-left: 3px solid lighten(@mid-gray, 33%);
+	border-left: 3px solid @gray-light;
 }
 
 /* --------------------------------------------------------------
@@ -577,11 +578,11 @@ code {
 }
 
 ::selection {
-	background: lighten(@brand-primary, 48%);
+	background: lighten(@brand-primary, 50%);
 }
 
 ::-moz-selection {
-	background: lighten(@brand-primary, 48%);
+	background: lighten(@brand-primary, 50%);
 }
 
 textarea {
@@ -1094,7 +1095,7 @@ h2.ilHeader {
 	margin: 0;
 	display: inline;
 	font-size: @font-size-h3;
-	color: lighten(@mid-gray,30%);
+	color: @gray-light;
 }
 
 #headerimage {
@@ -1145,7 +1146,7 @@ div.ilHeadAction a:hover {
 div.ilHeaderDesc {
 	font-size: 90%;
 	padding: 0;
-	color: lighten(@text-color, 25%);
+	color: @il-light-text-color;
 	font-weight: 300;
 }
 

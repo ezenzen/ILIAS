@@ -23,7 +23,7 @@
 			&,
 			&:hover,
 			&:focus {
-				background-color: lighten(@gray, 15%);
+				background-color: @gray;
 				color: white;
 				border: 0 none;
 			}
@@ -43,7 +43,7 @@
 	padding: 0;
 	margin:  7px 15px 23px;
 	border: 0 none;
-	border-bottom: 2px solid lighten(@gray, 15%);
+	border-bottom: 2px solid @gray;
 }
 
 .ilSetupContent #ilTab {
@@ -59,7 +59,7 @@
 #ilSubTab {
 	padding: 5px 20px;
 	margin: -23px 0 10px;
-	/* border-bottom: 1px solid lighten(@mid-gray, 55%);
+	/* border-bottom: 1px solid @gray-light;
 	box-shadow: 0 2px 1px -1px white; */
 	> li {
 		> a {
