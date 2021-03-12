@@ -46,19 +46,23 @@ select.ilEditSelect {
 }
 
 [data-copg-ed-type='add-area'] {
-	height: 30px;
+	height: 40px;
+	text-align: center;
+	width: max-content;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 button.copg-add.dropdown-toggle.btn,
 button.copg-add.dropdown-toggle.btn:focus,
 button.copg-add.dropdown-toggle.btn:hover {
-	padding: 1px 5px;
+	padding: 0px 5px 3px 5px;
 	text-align: center;
 	font-size: @font-size-small;
 	background-color: transparent;
 	cursor: pointer;
 	width: 100%;
-	height: 30px;
+	height: 40px;
 	border: 0;
 }
 
@@ -69,23 +73,22 @@ button.copg-add.dropdown-toggle.btn:hover,
 
 	.glyphicon-plus {
 		border-radius: 50%;
-		background-color: #f3f3f3;
-		padding: 4px;
-		color: #b6b6b6;
+		background-color: @brand-primary;
+		padding: 10px;
+		color: white;
 	}
 }
 
-button.copg-add.dropdown-toggle.btn:hover {
-	background-color: #f3f3f3;
-	color: #797979;
-}
-
 [data-copg-ed-type='add-area'] ul.dropdown-menu {
-	left: 45%;
+	left: 50%;
+	margin-left: -125px;
+	margin-top: -5px;
+	min-width: 250px;
+	padding: 5px 0 0 0;
 }
-button.copg-add:hover {
-	color: lighten(@brand-secondary, 10%);
-	background-color: lighten(@brand-secondary, 52%);
+button.copg-add.dropdown-toggle.btn:hover .glyphicon-plus,
+button.copg-add.dropdown-toggle.btn:active .glyphicon-plus, {
+	background-color: darken(@brand-primary, 10%);
 }
 
 div.il_droparea {
@@ -251,13 +254,13 @@ div.ilTinyMenuSection, .il-copg-button-group {
 	white-space: nowrap;
 	/* border-right: 1px solid #e0e0e0; */
 	/* padding: 0 10px 4px 0; */
-	margin-right: 10px;
 	margin: 10px 10px 10px 0;
+	width: 100%;
 
 	p {
 		margin-bottom: 5px;
 		padding: 2px 5px;
-		background-color: darken(@il-secondary-container-bg, 4%);
+		background-color: @il-slate-bulky-bg-color;
 	}
 
 	@media only screen and (max-width: @grid-float-breakpoint-max) {
@@ -555,6 +558,7 @@ a.nostyle:hover {
 			background-color: #fcfcfc;
 			cursor: default;
 			height: 21px;
+
 		}
 	}
 
@@ -710,7 +714,9 @@ div.ilCOPGMediaPrint {
 	}
 
 	p.ilTinyInfo {
-		padding: 2px;
+		padding: 10px 15px;
+		margin: 0px -15px 10px -15px;
+		font-size: 1.5rem;
 		@media only screen and (max-width: @grid-float-breakpoint-max) {
 			display: none;
 		}
@@ -737,6 +743,23 @@ div.ilCOPGMediaPrint {
 		.ilFormFooter {
 		}
 	}
+	#ilPageEditLegend {
+		> div {
+			margin: 5px 0;
+		}
+		.il_droparea {
+			&, &:hover {
+				display: inline-block;
+				width: auto;
+				height: 40px;
+				padding: 3px 5px 0px 5px;
+				background-color: white;
+				border: none;
+				cursor: default;
+	
+			}
+		}
+	}
 }
 
 p#copg-auto-save {
@@ -755,9 +778,34 @@ p#copg-auto-save {
 	> .dropdown {
 		overflow: hidden;
 		position: static;
+		> .btn:active, .btn.active {
+			box-shadow: none;
+		}
 		> ul {
 			position: absolute;
 			z-index: 10;
+			> li {
+				border-bottom: 2px solid #f2f2f2;
+				> a {
+					padding: 6px 10px;
+				}
+			}
+		}
+		> .dropdown-menu::before {
+			content: '';
+			width: 0px;
+			height: 0px;
+			transform: rotate(360deg);
+			-webkit-transform: rotate(360deg);
+			-moz-transform: rotate(360deg);
+			border-style: solid;
+			border-width: 0 25px 15px 25px;
+			border-color: transparent transparent white transparent;
+			background-color: transparent;
+			position: absolute;
+			left: 50%;
+			margin-left: -24.8px;
+			top: -14px;
 		}
 	}
 }
